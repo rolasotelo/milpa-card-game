@@ -2,11 +2,19 @@
 
 This is the web app for the Milpa Card Game. An online  multiplayer card game where two players compete to grow the best milpa.
 
+## Development
+
 `cd` into the `web` directory and run the following commands:
 
 ```bash
 $ yarn install
 $ yarn dev
+```
+
+To run the storybook:
+
+```bash
+$ yarn storybook
 ```
 
 ## Deployment
