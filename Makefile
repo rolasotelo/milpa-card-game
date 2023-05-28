@@ -22,6 +22,7 @@ set_up_git_hooks:
 	echo "🚓・Setting up pre-commit"
 	echo ""
 	gum spin --spinner monkey --title "Setting up..." -- pre-commit install
+	gum spin --spinner monkey --title "Setting up..." -- pre-commit install --hook-type commit-msg
 	echo "Done 🪇"
 	echo ""
 

@@ -7,7 +7,7 @@
 # section "[body-max-line-length]" could also be written as "[B1]". Full section names are
 # used in here for clarity.
 #
-# [general]
+[general]
 # Ignore certain rules, this example uses both full name and id
 # ignore=title-trailing-punctuation, T3
 
@@ -44,7 +44,7 @@
 
 # Enable community contributed rules
 # See http://jorisroovers.github.io/gitlint/contrib_rules for details
-# contrib=contrib-title-conventional-commits,CC1
+contrib=contrib-title-conventional-commits,CC1
 
 # Set the extra-path where gitlint will search for user defined rules
 # See http://jorisroovers.github.io/gitlint/user_defined_rules for details
@@ -52,13 +52,13 @@
 
 # This is an example of how to configure the "title-max-length" rule and
 # set the line-length it enforces to 50
-# [title-max-length]
-# line-length=50
+[title-max-length]
+line-length=55
 
 # Conversely, you can also enforce minimal length of a title with the
 # "title-min-length" rule:
-# [title-min-length]
-# min-length=5
+[title-min-length]
+min-length=20
 
 # [title-must-not-contain-word]
 # Comma-separated list of words that should not occur in the title. Matching is case
@@ -66,11 +66,11 @@
 # will not cause a violation, but "WIP: my title" will.
 # words=wip
 
-# [title-match-regex]
+[title-match-regex]
 # python-style regex that the commit-msg title must match
 # Note that the regex can contradict with other rules if not used correctly
 # (e.g. title-must-not-contain-word).
-# regex=^US[0-9]*
+regex=^\w+(\((🚧|🏗️|🦖|👗|⚙️|🚀|📜|📝|🪅|💻|📺|🕹️|📚)\))?!?:\s.*
 
 # [body-max-line-length]
 # line-length=72
@@ -83,17 +83,17 @@
 # default = True
 # ignore-merge-commits=false
 
-# [body-changed-file-mention]
+[body-changed-file-mention]
 # List of files that need to be explicitly mentioned in the body when they are changed
 # This is useful for when developers often erroneously edit certain files or git submodules.
 # By specifying this rule, developers can only change the file when they explicitly reference
 # it in the commit message.
-# files=gitlint-core/gitlint/rules.py,README.md
+files=README.md,LICENSE,.gitlint,.pre-commit-config.yaml,.envrc,/docs/docusaurus.config.js
 
 # [body-match-regex]
 # python-style regex that the commit-msg body must match.
 # E.g. body must end in My-Commit-Tag: foo
-# regex=My-Commit-Tag: foo$
+# regex=Signed-off-by: .+ <.+@.+>$
 
 [author-valid-email]
 # python-style regex that the commit author email address must match.
@@ -135,6 +135,6 @@ regex=rola@hey.com
 # This is a contrib rule - a community contributed rule. These are disabled by default.
 # You need to explicitly enable them one-by-one by adding them to the "contrib" option
 # under [general] section above.
-# [contrib-title-conventional-commits]
+[contrib-title-conventional-commits]
 # Specify allowed commit types. For details see: https://www.conventionalcommits.org/
-# types = bugfix,user-story,epic
+types = feat,fix,chore
