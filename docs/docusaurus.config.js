@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Milpa - Card Game',
+  title: 'Milpa',
   tagline: 'Online card game',
   favicon: 'img/favicon.ico',
 
@@ -64,9 +64,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/milpa-social-card.png',
       navbar: {
-        title: 'My Site',
+        title: 'Milpa Card Game',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Milpa Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -74,7 +74,13 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'rulesSidebar',
+            position: 'left',
+            label: 'Rules',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -91,8 +97,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Docs',
+                to: '/docs/documentation/intro',
               },
             ],
           },
@@ -119,7 +125,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `${new Date().getFullYear()} Milpa - Card Game . Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
